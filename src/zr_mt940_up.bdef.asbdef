@@ -1,0 +1,30 @@
+managed implementation in class ZBP_R_MT940_UP unique;
+strict ( 2 );
+
+define behavior for ZR_MT940_UP alias MT940Upload
+persistent table zbank_mt940_up
+lock master
+authorization master ( none )
+{
+  create;
+  update;
+  delete;
+
+action ProcessMT940 result [1] $self;
+
+  field ( readonly )
+    CreatedBy,
+    CreatedAt;
+
+  mapping for zbank_mt940_up
+  {
+    UploadId   = upload_id;
+    FileName   = file_name;
+    FileContent = file_content;
+    MimeType    = mime_type;
+    Status     = status;
+    Message    = message;
+    CreatedBy  = created_by;
+    CreatedAt  = created_at;
+  }
+}

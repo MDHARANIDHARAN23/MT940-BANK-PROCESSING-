@@ -1,0 +1,267 @@
+@Metadata.layer: #CORE
+  @UI.headerInfo: {
+        typeName: 'Reconciliation',
+        typeNamePlural: 'Reconciliations',
+        title: {
+            type: #STANDARD,
+            value: 'ReconciliationId'
+        }
+    }
+annotate entity ZC_BANK_MT940_R with
+{
+  
+
+    @UI.facet: [
+        {
+            id: 'ReconciliationInformation',
+            purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Reconciliation Information',
+            position: 10
+        }
+    ]
+
+
+    /* =========================
+       RECONCILIATION ID
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 10,
+            importance: #HIGH,
+            label: 'Reconciliation ID'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 10,
+            label: 'Reconciliation ID'
+        }
+    ]
+    @UI.selectionField: [{ position: 10 }]
+    ReconciliationId;
+
+
+    /* =========================
+       BANK AMOUNT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 20,
+            importance: #HIGH,
+            label: 'Bank Amount'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 20,
+            label: 'Bank Amount'
+        }
+    ]
+    BankAmount;
+
+
+    /* =========================
+       STATEMENT ID
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 30,
+            importance: #HIGH,
+            label: 'Statement ID'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 30,
+            label: 'Statement ID'
+        }
+    ]
+    @UI.selectionField: [{ position: 20 }]
+    StatementId;
+
+
+    /* =========================
+       TRANSACTION ID
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 40,
+            importance: #HIGH,
+            label: 'Transaction ID'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 40,
+            label: 'Transaction ID'
+        }
+    ]
+    @UI.selectionField: [{ position: 30 }]
+    TransactionId;
+
+
+    /* =========================
+       SAP AMOUNT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 50,
+            importance: #HIGH,
+            label: 'SAP Amount'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 50,
+            label: 'SAP Amount'
+        }
+    ]
+    SapAmount;
+
+
+    /* =========================
+       DIFFERENCE AMOUNT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 60,
+            importance: #HIGH,
+            label: 'Difference Amount'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 60,
+            label: 'Difference Amount'
+        }
+    ]
+    DifferenceAmount;
+
+
+    /* =========================
+       SAP DOCUMENT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 70,
+            importance: #HIGH,
+            label: 'SAP Document'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 70,
+            label: 'SAP Document'
+        }
+    ]
+    SapDocument;
+
+
+    /* =========================
+       SAP REFERENCE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 80,
+            importance: #MEDIUM,
+            label: 'SAP Reference'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 80,
+            label: 'SAP Reference'
+        }
+    ]
+    SapReference;
+
+
+    /* =========================
+       VALIDATION STATUS
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 90,
+            importance: #HIGH,
+            label: 'Validation Status'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 90,
+            label: 'Validation Status'
+        }
+    ]
+    ValidationStatus;
+
+
+    /* =========================
+       VALIDATION MESSAGE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 100,
+            importance: #HIGH,
+            label: 'Validation Message'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 100,
+            label: 'Validation Message'
+        }
+    ]
+    ValidationMessage;
+
+
+    /* =========================
+       PROCESSED BY
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 110,
+            importance: #MEDIUM,
+            label: 'Processed By'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 110,
+            label: 'Processed By'
+        }
+    ]
+    ProcessedBy;
+
+
+    /* =========================
+       PROCESSED AT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 120,
+            importance: #MEDIUM,
+            label: 'Processed At'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 120,
+            label: 'Processed At'
+        }
+    ]
+    ProcessedAt;
+
+}

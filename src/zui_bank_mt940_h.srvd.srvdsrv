@@ -1,0 +1,6 @@
+@EndUserText.label: 'SERVICE DEFINITION for root'
+define service ZUI_BANK_MT940_H {
+  expose ZC_BANK_MT940_H;
+  expose ZC_BANK_MT940_I;
+  expose ZC_BANK_MT940_R;
+}

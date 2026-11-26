@@ -1,0 +1,4 @@
+@EndUserText.label: 'MT940 UP Service'
+define service ZUI_MT940_UP {
+  expose ZC_MT940_UP as MT940UP;
+}

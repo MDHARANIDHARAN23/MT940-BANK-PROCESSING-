@@ -1,0 +1,136 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'MT940 Upload',
+    typeNamePlural: 'MT940 Uploads',
+    title: {
+        type: #STANDARD,
+        value: 'UploadId'
+    }
+}
+
+annotate view ZC_MT940_UP with
+{
+    @UI.facet: [
+        {
+            id: 'UploadInformation',
+            purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Upload Information',
+            position: 10
+        }
+    ]
+
+    @UI.lineItem: [
+        {
+            position: 10,
+            label: 'Upload ID'
+        },
+        {
+            type: #FOR_ACTION,
+            dataAction: 'ProcessMT940',
+            label: 'Process MT940',
+            position: 90
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 10,
+            label: 'Upload ID'
+        },
+        {
+            type: #FOR_ACTION,
+            dataAction: 'ProcessMT940',
+            label: 'Process MT940',
+            position: 90
+        }
+    ]
+    UploadId;
+
+    @UI.lineItem: [
+        {
+            position: 20,
+            label: 'File Name'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 20,
+            label: 'File Name'
+        }
+    ]
+    FileName;
+
+    @UI.lineItem: [
+        {
+            position: 30,
+            label: 'File Content'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 30,
+            label: 'File Content'
+        }
+    ]
+    FileContent;
+
+    @UI.lineItem: [
+        {
+            position: 40,
+            label: 'MIME Type'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 40,
+            label: 'MIME Type'
+        }
+    ]
+    MimeType;
+
+    @UI.lineItem: [
+        {
+            position: 50,
+            label: 'Status'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 50,
+            label: 'Status'
+        }
+    ]
+    Status;
+
+    @UI.lineItem: [
+        {
+            position: 60,
+            label: 'Message'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 60,
+            label: 'Message'
+        }
+    ]
+    Message;
+
+    @UI.identification: [
+        {
+            position: 70,
+            label: 'Created By'
+        }
+    ]
+    CreatedBy;
+
+    @UI.identification: [
+        {
+            position: 80,
+            label: 'Created At'
+        }
+    ]
+    CreatedAt;
+}

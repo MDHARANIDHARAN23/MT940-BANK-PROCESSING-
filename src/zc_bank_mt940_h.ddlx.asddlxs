@@ -1,0 +1,300 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Bank Statement',
+    typeNamePlural: 'Bank Statements',
+    title: {
+        type: #STANDARD,
+        value: 'StatementId'
+    }
+}
+
+annotate entity ZC_BANK_MT940_H with
+{
+    @UI.facet: [
+        {
+            id: 'StatementInfo',
+            purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Statement Information',
+            position: 10
+        },
+        {
+            id: 'Transactions',
+            purpose: #STANDARD,
+            type: #LINEITEM_REFERENCE,
+            label: 'Transactions',
+            position: 20,
+            targetElement: '_Transaction'
+        }
+    ]
+
+    /* =========================
+       STATEMENT ID
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 10,
+            label: 'Statement ID',
+            importance: #HIGH
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 10,
+            label: 'Statement ID'
+        }
+    ]
+    @UI.selectionField: [{ position: 10 }]
+    StatementId;
+
+
+    /* =========================
+       BANK ACCOUNT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 20,
+            label: 'Bank Account',
+            importance: #HIGH
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 20,
+            label: 'Bank Account'
+        }
+    ]
+    @UI.selectionField: [{ position: 20 }]
+    BankAccount;
+
+
+    /* =========================
+       STATEMENT NO
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 30,
+            label: 'Statement No',
+            importance: #HIGH
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 30,
+            label: 'Statement No'
+        }
+    ]
+    StatementNo;
+
+
+    /* =========================
+       CURRENCY
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 40,
+            label: 'Currency',
+            importance: #MEDIUM
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 40,
+            label: 'Currency'
+        }
+    ]
+    Currency;
+
+
+    /* =========================
+       OPENING BALANCE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 50,
+            label: 'Opening Balance',
+            importance: #MEDIUM
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 50,
+            label: 'Opening Balance'
+        }
+    ]
+    OpeningBalance;
+
+
+    /* =========================
+       STATEMENT DATE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 60,
+            label: 'Statement Date',
+            importance: #HIGH
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 60,
+            label: 'Statement Date'
+        }
+    ]
+    @UI.selectionField: [{ position: 30 }]
+    StatementDate;
+
+
+    /* =========================
+       CLOSING BALANCE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 70,
+            label: 'Closing Balance',
+            importance: #MEDIUM
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 70,
+            label: 'Closing Balance'
+        }
+    ]
+    ClosingBalance;
+
+
+    /* =========================
+       AVAILABLE BALANCE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 80,
+            label: 'Available Balance',
+            importance: #MEDIUM
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 80,
+            label: 'Available Balance'
+        }
+    ]
+    AvailableBalance;
+
+
+    /* =========================
+       FILE NAME
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 90,
+            label: 'File Name',
+            importance: #MEDIUM
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 90,
+            label: 'File Name'
+        }
+    ]
+    FileName;
+
+
+    /* =========================
+       TOTAL RECORDS
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 100,
+            label: 'Total Records',
+            importance: #HIGH
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 100,
+            label: 'Total Records'
+        }
+    ]
+    TotalRecords;
+
+
+    /* =========================
+       PROCESS STATUS
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 110,
+            label: 'Process Status',
+            importance: #HIGH
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 110,
+            label: 'Process Status'
+        }
+    ]
+    ProcessStatus;
+
+
+    /* =========================
+       MESSAGE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 120,
+            label: 'Message',
+            importance: #MEDIUM
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 120,
+            label: 'Message'
+        }
+    ]
+    Message;
+
+
+    /* =========================
+       CREATED BY
+       ========================= */
+
+    @UI.identification: [
+        {
+            position: 130,
+            label: 'Created By'
+        }
+    ]
+    CreatedBy;
+
+
+    /* =========================
+       CREATED AT
+       ========================= */
+
+    @UI.identification: [
+        {
+            position: 140,
+            label: 'Created At'
+        }
+    ]
+    CreatedAt;
+
+}

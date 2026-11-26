@@ -1,0 +1,276 @@
+@Metadata.layer: #CORE
+ @UI.headerInfo: {
+        typeName: 'Transaction',
+        typeNamePlural: 'Transactions',
+        title: {
+            type: #STANDARD,
+            value: 'TransactionId'
+        }
+    }
+
+
+annotate entity ZC_BANK_MT940_I with
+{
+   
+    @UI.facet: [
+        {
+            id: 'TransactionInformation',
+            purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Transaction Information',
+            position: 10
+        },
+        {
+            id: 'Reconciliation',
+            purpose: #STANDARD,
+            type: #LINEITEM_REFERENCE,
+            label: 'Reconciliation',
+            position: 20,
+            targetElement: '_Reconciliation'
+        }
+    ]
+
+
+    /* =========================
+       TRANSACTION ID
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 10,
+            importance: #HIGH,
+            label: 'Transaction ID'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 10,
+            label: 'Transaction ID'
+        }
+    ]
+    @UI.selectionField: [{ position: 10 }]
+    TransactionId;
+
+
+    /* =========================
+       TRANSACTION DATE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 20,
+            importance: #HIGH,
+            label: 'Transaction Date'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 20,
+            label: 'Transaction Date'
+        }
+    ]
+    @UI.selectionField: [{ position: 20 }]
+    TransactionDate;
+
+
+    /* =========================
+       STATEMENT ID
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 30,
+            importance: #HIGH,
+            label: 'Statement ID'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 30,
+            label: 'Statement ID'
+        }
+    ]
+    StatementId;
+
+
+    /* =========================
+       VALUE DATE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 40,
+            importance: #HIGH,
+            label: 'Value Date'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 40,
+            label: 'Value Date'
+        }
+    ]
+    @UI.selectionField: [{ position: 30 }]
+    ValueDate;
+
+
+    /* =========================
+       TRANSACTION TYPE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 50,
+            importance: #HIGH,
+            label: 'Transaction Type'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 50,
+            label: 'Transaction Type'
+        }
+    ]
+    TransactionType;
+
+
+    /* =========================
+       AMOUNT
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 60,
+            importance: #HIGH,
+            label: 'Amount'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 60,
+            label: 'Amount'
+        }
+    ]
+    Amount;
+
+
+    /* =========================
+       CURRENCY
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 70,
+            importance: #HIGH,
+            label: 'Currency'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 70,
+            label: 'Currency'
+        }
+    ]
+    Currency;
+
+
+    /* =========================
+       BANK REFERENCE
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 80,
+            importance: #MEDIUM,
+            label: 'Bank Reference'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 80,
+            label: 'Bank Reference'
+        }
+    ]
+    BankReference;
+
+
+    /* =========================
+       EREF
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 90,
+            importance: #MEDIUM,
+            label: 'EREF'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 90,
+            label: 'EREF'
+        }
+    ]
+    Eref;
+
+
+    /* =========================
+       NAME
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 100,
+            importance: #HIGH,
+            label: 'Name'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 100,
+            label: 'Name'
+        }
+    ]
+    Name;
+
+
+    /* =========================
+       REMITTANCE INFORMATION
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 110,
+            importance: #HIGH,
+            label: 'Remittance Information'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 110,
+            label: 'Remittance Information'
+        }
+    ]
+    RemittanceInfo;
+
+
+    /* =========================
+       INVOICE NUMBER
+       ========================= */
+
+    @UI.lineItem: [
+        {
+            position: 120,
+            importance: #HIGH,
+            label: 'Invoice Number'
+        }
+    ]
+    @UI.identification: [
+        {
+            position: 120,
+            label: 'Invoice Number'
+        }
+    ]
+    InvoiceNumber;
+
+}

@@ -1,0 +1,106 @@
+managed implementation in class ZBP_R_BANK_MT940 unique;
+strict ( 2 );
+
+
+define behavior for ZR_BANK_MT940_H alias BankStatement
+persistent table zbank_mt940_h
+lock master
+authorization master ( none )
+{
+  create;
+  update;
+  delete;
+
+  association _Transaction { create; }
+
+   action CreateReconciliation;
+
+  field ( readonly )
+    CreatedBy,
+    CreatedAt;
+
+  mapping for zbank_mt940_h
+  {
+    StatementId      = statement_id;
+    BankAccount      = bank_account;
+    StatementNo      = statement_no;
+    Currency         = currency;
+    OpeningBalance   = opening_balance;
+    StatementDate    = statement_date;
+    ClosingBalance   = closing_balance;
+    AvailableBalance = available_balance;
+    FileName         = file_name;
+    TotalRecords     = total_records;
+    ProcessStatus    = process_status;
+    Message          = message;
+    CreatedBy        = created_by;
+    CreatedAt        = created_at;
+  }
+}
+
+
+define behavior for ZR_BANK_MT940_I alias BankTransaction
+persistent table zbank_mt940_i
+lock dependent by _Header
+authorization master ( none )
+{
+  update;
+  delete;
+
+  association _Header;
+  association _Reconciliation { create; }
+
+
+  field ( readonly )
+    StatementId;
+
+  mapping for zbank_mt940_i
+  {
+    TransactionId   = transaction_id;
+    StatementId     = statement_id;
+    TransactionDate = transaction_date;
+    ValueDate       = value_date;
+    TransactionType = transaction_type;
+    Amount          = amount;
+    Currency        = currency;
+    BankReference   = bank_reference;
+    Eref            = eref;
+    Name            = name;
+    RemittanceInfo  = remittance_info;
+    InvoiceNumber   = invoice_number;
+  }
+}
+
+
+define behavior for ZR_BANK_MT940_R alias Reconciliation
+persistent table zbank_mt940_r
+lock dependent by _Header
+authorization master ( none )
+{
+  update;
+  delete;
+
+  association _Transaction;
+  association _Header;
+
+  field ( readonly )
+    StatementId,
+    TransactionId;
+
+
+  mapping for zbank_mt940_r
+  {
+    ReconciliationId  = reconciliation_id;
+    BankAmount        = bank_amount;
+    StatementId       = statement_id;
+    TransactionId     = transaction_id;
+    SapAmount         = sap_amount;
+    DifferenceAmount  = difference_amount;
+    SapDocument       = sap_document;
+    SapReference      = sap_reference;
+    ValidationStatus  = validation_status;
+    ValidationMessage = validation_message;
+    ProcessedBy       = processed_by;
+    ProcessedAt       = processed_at;
+  }
+}
